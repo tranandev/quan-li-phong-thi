@@ -102,12 +102,12 @@ curl -sSL http://bit.ly/2ysbOFE | bash -s 1.4.0
 ```
 cd phongthi-app
 ```
-- Chạy Scrip khởi động mạng
+- Chạy Script khởi động mạng
 
 ```
 ./startFabric.sh
 ```
-- Đăng kí Admi:
+- Đăng kí Admin:
 
 ```
 node registerAdmin.js
