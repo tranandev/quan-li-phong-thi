@@ -18,21 +18,21 @@ Hướng dẫn cài đặt trên hệ điều hành ubuntu 18.04 LTS:
 #### Golang
 **Yêu cầu Golang phiên bản 1.9.x hoặc mới hơn**.
 
-  Cách cài đặt
-  Ta nên cài đặt Go vào thư mục ~/
-  Chuyển về thư mục ~/
+- Cách cài đặt
+- Ta nên cài đặt Go vào thư mục ~/
+- Chuyển về thư mục ~/
 ```
 cd ~/
 ```
-  Tải Go phiên bản mới nhất từ Google bằng lệnh
+- Tải Go phiên bản mới nhất từ Google bằng lệnh
 ```
 wget https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
 ```
-  Giải nén bằng lệnh
+- Giải nén bằng lệnh
 ```
 tar xvzf go1*.tar.gz
 ```
-  Thiết lập GOPATH bằng cách thêm vào file ~/.bashrc lệnh dưới đây:
+- Thiết lập GOPATH bằng cách thêm vào file ~/.bashrc lệnh dưới đây:
 ```
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -53,8 +53,8 @@ sudo apt install -f
 ```
 sudo usermod -aG docker USERNAME
 ```
-  Trong đó: USERNAME là tên thật của người dùng
-  Đăng xuất và đăng nhập lại. Để xác minh rằng Docker đang làm việc bạn chạy lệnh:
+- Trong đó: USERNAME là tên thật của người dùng
+-Đăng xuất và đăng nhập lại. Để xác minh rằng Docker đang làm việc bạn chạy lệnh:
 
 ```
 docker run hello-world
@@ -67,11 +67,11 @@ sudo apt install python-pip
 #### Docker-Compose
 **Yêu cầu dokcer-compose phiên bản 1.8 hoặc mới hơn**.
 
-Docker-Compose cho phép ta dễ dàng quản lý được nhiều containers một lúc. Ta cài đặt bằng Pip
+- Docker-Compose cho phép ta dễ dàng quản lý được nhiều containers một lúc. Ta cài đặt bằng Pip
 ```
 sudo pip install docker-compose
 ```
-Để kiểm tra phiên bản doker-compose ta dùng lệnh
+- Để kiểm tra phiên bản doker-compose ta dùng lệnh
 ```
 docker-compose --version
 ```
@@ -89,7 +89,7 @@ mkdir -p $GOPATH/src/github.com/hyperledger/
 cd github.com/hyperledger 
 git clone https://github.com/hyperledger/fabric-samples.git
 ```
--  Cài đặt các Binaries và Docker Images:
+- Cài đặt các Binaries và Docker Images:
 ```
 curl -sSL http://bit.ly/2ysbOFE | bash -s 1.4.0
 ```
