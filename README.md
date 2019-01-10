@@ -117,7 +117,9 @@ node registerAdmin.js
 node registerUser.js
 ```
 - Nếu xảy ra lỗi
+
 ![error](./media/error.png)
+
 - Xóa thư mục chứa key và đăng kí Admin, User lại
 
 ```
