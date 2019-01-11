@@ -98,17 +98,38 @@ curl -sSL http://bit.ly/2ysbOFE | bash -s 1.4.0
 - Di chuyển đến Project Phòng thi. Trong trường hợp này là ở ~/phongthi-app
 
 ## Hướng dẫn sử dụng
--       docker rm -f $(docker ps -aq)
-	docker network prune
-        rm ~/.hfc-key-store/*
-        cd phongthi-app
-        ./startFabric.sh
-        npm install
-        node registerAdmin.js
-        node registerUser.js
-        node server.js
+- Di chuyển đến thư mục phongthi-app
+```
+cd phongthi-app
+```
+- Chạy Scrip khởi động mạng
 
-​	Vào trình duyệt nhập địa chỉ http://localhost:8000/ để vào trang chủ.
+```
+./startFabric.sh
+```
+- Đăng kí Admi:
+
+```
+node registerAdmin.js
+```
+- Đăng kí User
+```
+node registerUser.js
+```
+- Nếu xảy ra lỗi
+![error](./media/error.png)
+- Xóa thư mục chứa key và đăng kí Admin, User lại
+
+```
+rm ~/.hfc-key-store/*
+node registerAdmin.js
+node registerUser.js
+```
+- Chạy server
+```
+node server.js
+```
+- Vào trình duyệt nhập địa chỉ http://localhost:8000/ để vào trang chủ.
 
 ![giaodien](./media/giaodien.png)
 
