@@ -1,0 +1,146 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charshet="utf-8" />
+    <title>The Exammination Room Application</title>
+    <link rel="icon" href="favicon.png" type="image/gif">
+
+    <!-- require jquery and bootstrap scripts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    
+    <!-- adding style here -->
+    <style type="text/css">
+      header{
+        background-color: lightgray;
+        font-size:20px;
+        padding:15px;
+      }
+      header, .form-group{
+        margin-bottom: 3%;
+      }
+      .form-group{
+        width:50%;
+      }
+      #body{
+        margin-left:3%;
+        margin-right:3%;
+      }
+      .form-control{
+        margin: 8px;
+      }
+      #right_header{
+        width:20%;
+        font-size:15px;
+        margin-right:0px;
+      }
+      #left_header{
+        margin-left:0;
+        width:40%;
+        display:inline-block;
+      } 
+      #id {
+        width:49%;
+        display: inline-block;
+      }
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body ng-app="application" ng-controller="appController">
+    <header>
+      <div id="left_header">The Examination Room Application</div>
+    </header>
+
+    <div id="body">
+      <div class="form-group">
+        <label>Xem tất cả danh sách</label>
+        <p><input id="timTatcaID" type="submit" value="OK" class="btn btn-primary" ng-click="timTatcaID()"></p>
+      </div>
+ 
+      <table id="all_phongthi" class="table" align="center">
+
+        <tr>
+          <th>ID</th>
+          <th>Họ tên</th>
+          <th>Điểm thi</th>
+          <th>Vi phạm</th>
+          <th>Ghi chú</th>
+        </tr>
+
+        <tr ng-repeat="phongthi in all_phongthi">
+          <td>{{phongthi.Key}}</td>
+          <td>{{phongthi.hoten}}</td>
+          <td>{{phongthi.diemthi}}</td>
+          <td>{{phongthi.vipham}}</td>
+          <td>{{phongthi.ghichu}}</td>
+        </tr>
+      </table>
+
+      <div class="form-group">
+        <label>Tìm theo ID</label><br>
+        <h5 style="color:red;margin-bottom:2%" id="error_query">Error: Please Enter a valid ID</h5>
+        
+        Nhập ID: <input id="createName" class="form-control" type="text" placediemthi="Ex: 3" ng-model="phongthi_id">
+        <input id="querySubmit" type="submit" value="Query" class="btn btn-primary" ng-click="timID()">
+      </div>
+
+      <table id="query_phongthi" class="table" align="center">
+
+        <tr>
+          <th>Họ tên</th>
+          <th>Điểm thi</th>
+          <th>Vi phạm</th>
+          <th>Ghi chú</th>
+        </tr>
+
+        <tr>
+          <td>{{query_phongthi.hoten}}</td>
+          <td>{{query_phongthi.diemthi}}</td>
+          <td>{{query_phongthi.vipham}}</td>
+          <td>{{query_phongthi.ghichu}}</td>
+        </tr>
+      </table>
+
+      <div class="form-group">
+        <label>Tạo ID mới</label>
+        <h5 style="color:green;margin-bottom:2%" id="success_create">Success! Tx ID: {{create_phongthi}}</h5>
+        <br>
+        ID: <input class="form-control" type="text" placediemthi="Ex: 11" ng-model="phongthi.id">
+        Họ tên: <input class="form-control" type="text" placediemthi="Ex: 4982342301" ng-model="phongthi.hoten">
+        Điểm thi: <input class="form-control" type="text" placediemthi="Ex: Hansel" ng-model="phongthi.diemthi">
+        Vi phạm: <input id="createName" class="form-control" type="text" placediemthi="Ex: 28.012" ng-model="phongthi.vipham">
+        Ghi chú: <input class="form-control" type="text" placediemthi="Ex: 0239L" ng-model="phongthi.ghichu">
+        
+        <input id="createSubmit" type="submit" value="Create" class="btn btn-primary" ng-click="taoID()"> 
+      </div>
+
+      <div class="form-group">
+        <label>Sửa điểm thi</label><br>
+        <h5 style="color:green;margin-bottom:2%" id="success_diemthi">Success! Tx ID: {{change_diemthi}}</h5>
+        <h5 style="color:red;margin-bottom:2%" id="error_diemthi"> </h5>
+        Nhập ID: <input class="form-control" name="assetSelect" placediemthi="Ex: 1" ng-model="diemthi.id">
+        Nhập điểm mới: <input class="form-control" name="assetSelect" placediemthi="Ex: Barry" ng-model="diemthi.diem">
+        <input id="transferSubmit" type="submit" value="Change" class="btn btn-primary" ng-click="suaDiemthi()">
+      </div>
+
+    </div>
+  </body>
+    <!-- requiring the angular page -->
+    <script type="text/javascript" src="app.js"> </script>
+</html>
