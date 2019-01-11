@@ -75,7 +75,7 @@ func (s *SmartContract) Invoke(APIstub shim.ChaincodeStubInterface) sc.Response 
 
 /*
  * The timID method *
-Used to view the records of one particular phongthi
+Used to view ID
 It takes one argument -- the key for the phongthi in question
  */
 func (s *SmartContract) timID(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
@@ -93,7 +93,7 @@ func (s *SmartContract) timID(APIstub shim.ChaincodeStubInterface, args []string
 
 /*
  * The initLedger method *
-Will add test data (10 phongthi catches)to our network
+Will add test data (10 ID)to network
  */
 func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Response {
 	phongthi := []Phongthi{
@@ -124,7 +124,6 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 
 /*
  * The taoID method *
-Fisherman like Sarah would use to record each of her phongthi catches. 
 This method takes in five arguments (attributes to be saved in the ledger). 
  */
 func (s *SmartContract) taoID(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
@@ -146,7 +145,7 @@ func (s *SmartContract) taoID(APIstub shim.ChaincodeStubInterface, args []string
 
 /*
  * The timTatcaID method *
-allows for assessing all the records added to the ledger(all phongthi catches)
+allows for assessing all the records added to the ledger
 This method does not take any arguments. Returns JSON string containing results. 
  */
 func (s *SmartContract) timTatcaID(APIstub shim.ChaincodeStubInterface) sc.Response {
@@ -195,7 +194,7 @@ func (s *SmartContract) timTatcaID(APIstub shim.ChaincodeStubInterface) sc.Respo
 /*
  * The suaDiemphongthi method *
 The data in the world state can be updated with who has possession. 
-This function takes in 2 arguments, phongthi id and new diemthi name. 
+This function takes in 2 arguments, phongthi_id and new diemthi. 
  */
 func (s *SmartContract) suaDiemphongthi(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
