@@ -11,6 +11,7 @@
 - Hyperleger Fabric.
 - Hyperledger Frabric NodeJS SDK.
 - JavaScript
+- Golang
 ## Hướng dẫn cài đặt
 Hướng dẫn cài đặt trên hệ điều hành ubuntu 18.04 LTS:
 
